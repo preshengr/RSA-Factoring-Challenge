@@ -2,3 +2,6 @@
 - To calculate the factors of a number n I will use a naive brute-force method called trial division which attempts to divide n by all numbers up to and including n.
 - If there is no remainder the number is a factor.
 - No number more than n/2 except n itself can be a factor of n so as an optimization I will only run the trial division on numbers up to n/2, and then add n to the factor list. Additionaly, 1 is a factor of all integers so it will be added to the list at the start and we will commence trial division at 2.
+- The get_factor_list function creates a list with a single value, 1, which is a factor of any integer so not worth checking. We then enter a loop to perform modular division of n by all numbers up to n/2 - if the result is 0 then the current number is a factor and can be added to the list. Finally we add n to the list and return it.
+
+- The function factors is a generator which is a special kind of function returning a type of iterator called a generator object. This function can then be called using for/in syntax to retrieve all values. In this particular case we already have the function get_factor_list to actually calculate factors so within the generator function we can call get_factor_list and pass the list it returns to the iter function. This creates an iterator which we can loop using for/in. All that with just a single line of code.
