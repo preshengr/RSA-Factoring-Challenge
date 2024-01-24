@@ -1,7 +1,56 @@
-# Solution to RSA-Factoring-Challenge
-- To calculate the factors of a number n I will use a naive brute-force method called trial division which attempts to divide n by all numbers up to and including n.
-- If there is no remainder the number is a factor.
-- No number more than n/2 except n itself can be a factor of n so as an optimization I will only run the trial division on numbers up to n/2, and then add n to the factor list. Additionaly, 1 is a factor of all integers so it will be added to the list at the start and we will commence trial division at 2.
-- The get_factor_list function creates a list with a single value, 1, which is a factor of any integer so not worth checking. We then enter a loop to perform modular division of n by all numbers up to n/2 - if the result is 0 then the current number is a factor and can be added to the list. Finally we add n to the list and return it.
+# RSA-Factoring-Challenge
 
-- The function factors is a generator which is a special kind of function returning a type of iterator called a generator object. This function can then be called using for/in syntax to retrieve all values. In this particular case we already have the function get_factor_list to actually calculate factors so within the generator function we can call get_factor_list and pass the list it returns to the iter function. This creates an iterator which we can loop using for/in. All that with just a single line of code.
+## Overview
+
+This repository, RSA-Factoring-Challenge, contains code related to RSA factoring challenges. The primary purpose is to factorize numbers in the context of RSA cryptography. The repository includes the following files:
+
+1. **factors.c**
+   - C source code file that provides functionality for factoring numbers.
+
+2. **rsa**
+   - Executable file or script related to RSA cryptography.
+
+3. **test1**
+   - Test file or example related to the RSA factoring challenge.
+
+4. **wfactors.py**
+   - Python script that may be related to factors or factoring in the RSA context.
+
+## Usage
+
+To use the provided code and scripts:
+
+1. **factors.c**
+   - Compile the C code using a C compiler, such as GCC.
+   - Execute the compiled binary, providing necessary inputs.
+
+     Example:
+     ```bash
+     gcc factors.c -o factors
+     ./factors
+     ```
+
+2. **rsa**
+   - Execute the RSA-related script or binary, providing necessary inputs.
+
+     Example:
+     ```bash
+     ./rsa [options] [arguments]
+     ```
+
+3. **test1**
+   - Use the test file or example to understand how the RSA factoring challenge is approached.
+
+4. **wfactors.py**
+   - Run the Python script, providing necessary inputs.
+
+     Example:
+     ```bash
+     python wfactors.py
+     ```
+
+## License
+
+This repository is licensed to ALX - Holberton School. The code within the repository is authored by Engr Precious.
+
+Feel free to explore the provided code and scripts for understanding RSA factoring challenges. If you have any questions or concerns, please refer to the licensing information or reach out to the author.
